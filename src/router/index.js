@@ -30,6 +30,25 @@ const router = createRouter({
           }
         }
       ]
+    },
+    {
+      path: '/three-base',
+      name: 'ThreeBase',
+      meta: {
+        title: 'ThreeJs基础',
+        description: 'ThreeJs基础'
+      },
+      children: [
+        {
+          path: 'base-init',
+          name: 'baseInit',
+          component: () => import('@/views/three/base/BaseInitView.vue'),
+          meta: {
+            title: '基础初始化',
+            description: 'ThreeJs基础初始化'
+          }
+        }
+      ]
     }
   ]
 })
