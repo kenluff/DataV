@@ -83,6 +83,15 @@ const router = createRouter({
             title: '加载3D模型',
             description: 'ThreeJs加载3D模型'
           }
+        },
+        {
+          path: 'particle',
+          name: 'Particle',
+          component: () => import('@/views/three/base/ParticleView.vue'),
+          meta: {
+            title: '粒子系统',
+            description: 'ThreeJs粒子系统'
+          }
         }
       ]
     }
