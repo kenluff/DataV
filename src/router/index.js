@@ -13,20 +13,29 @@ const router = createRouter({
       }
     },
     {
-      path: '/samples',
-      name: 'samples',
+      path: '/echarts',
+      name: 'echarts',
       meta: {
-        title: '基础组件',
-        description: '框架基础组件'
+        title: 'Echarts基础',
+        description: 'Echarts基础'
       },
       children: [
         {
           path: 'scale-screen',
           name: 'scaleScreen',
-          component: () => import('@/samples/ScaleScreenView.vue'),
+          component: () => import('@/components/ScaleScreen/ScaleScreenView.vue'),
           meta: {
             title: '外层容器',
             description: '适配屏幕'
+          }
+        },
+        {
+          path: 'weather-view',
+          name: 'WeatherView',
+          component: () => import('@/views/echarts/WeatherView.vue'),
+          meta: {
+            title: '天气预报',
+            description: '天气预报'
           }
         }
       ]

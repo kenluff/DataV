@@ -2,7 +2,6 @@
 import { storeToRefs } from 'pinia'
 import SettingButton from '@/components/setting/SettingButton.vue'
 import ScaleScreen from '@/components/ScaleScreen/ScaleScreen.vue'
-import DataView from '@/components/DataView/DataView.vue'
 import { useSettingStore } from '@/stores/setting/setting.js'
 
 const settingStore = useSettingStore()
@@ -17,9 +16,18 @@ const { globalSetting } = storeToRefs(settingStore)
       overflow: globalSetting.isScale ? 'hidden' : 'auto'
     }"
   >
-    <div class="flex flex-row justify-end">
+    <div class="setting-button">
       <setting-button />
     </div>
-    <data-view />
+    <slot></slot>
   </scale-screen>
 </template>
+
+<style scoped>
+.setting-button {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  z-index: 100;
+}
+</style>

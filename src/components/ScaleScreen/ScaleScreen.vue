@@ -203,8 +203,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section ref="box" :style="{ ...styles.box, ...boxStyle }" class="v-screen-box">
-    <div ref="screenWrapper" :style="{ ...styles.wrapper, ...wrapperStyle }" class="screen-wrapper">
+  <section ref="box" :style="{ ...styles.box, ...boxStyle }">
+    <div ref="screenWrapper" :style="{ ...styles.wrapper, ...wrapperStyle }">
       <slot></slot>
     </div>
   </section>
