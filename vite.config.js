@@ -101,12 +101,22 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
+  base: './',
   build: {
     outDir: 'dist',
+    // assetsDir: "propertyData", // 指定生成静态资源的存放路径
+    target: 'esnext',
     chunkSizeWarningLimit: 2000,
     cssCodeSplit: true, //css 拆分
     sourcemap: false, //不生成sourcemap
-    minify: false, //是否禁用最小化混淆，esbuild打包速度最快，terser打包体积最小。
-    assetsInlineLimit: 5000 //小于该值 图片将打包成Base64
+    minify: 'terser', //是否禁用最小化混淆，esbuild打包速度最快，terser打包体积最小。
+    assetsInlineLimit: 5000, //小于该值 图片将打包成Base64
+    terserOptions: {
+      compress: {
+        drop_console: true, // 生产环境去掉控制台 console
+        drop_debugger: true, // 生产环境去掉控制台 debugger 默认就是true
+        dead_code: true // 删除无法访问的代码 默认就是true
+      }
+    }
   }
 })

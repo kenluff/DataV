@@ -97,6 +97,9 @@ devDependencies:
   tailwindcss:
     specifier: ^3.4.3
     version: 3.4.3
+  terser:
+    specifier: ^5.31.0
+    version: 5.31.0
   unplugin-auto-import:
     specifier: ^0.17.5
     version: 0.17.5(@vueuse/core@10.10.0)
@@ -108,7 +111,7 @@ devDependencies:
     version: 0.27.0(vue@3.4.26)
   vite:
     specifier: ^5.2.8
-    version: 5.2.11(sass@1.77.0)
+    version: 5.2.11(sass@1.77.0)(terser@5.31.0)
   vite-plugin-compression:
     specifier: ^0.5.1
     version: 0.5.1(vite@5.2.11)
@@ -834,6 +837,13 @@ packages:
     engines: {node: '>=6.0.0'}
     dev: true
 
+  /@jridgewell/source-map@0.3.6:
+    resolution: {integrity: sha512-1ZJTZebgqllO79ue2bm3rIGud/bOe0pP5BjSRCRxxYkEZS8STV7zN84UBbiYu7jy+eCKSnVIUgoWWE/tt+shMQ==}
+    dependencies:
+      '@jridgewell/gen-mapping': 0.3.5
+      '@jridgewell/trace-mapping': 0.3.25
+    dev: true
+
   /@jridgewell/sourcemap-codec@1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
 
@@ -1199,7 +1209,7 @@ packages:
       '@babel/core': 7.24.5
       '@babel/plugin-transform-typescript': 7.24.5(@babel/core@7.24.5)
       '@vue/babel-plugin-jsx': 1.2.2(@babel/core@7.24.5)
-      vite: 5.2.11(sass@1.77.0)
+      vite: 5.2.11(sass@1.77.0)(terser@5.31.0)
       vue: 3.4.26
     transitivePeerDependencies:
       - supports-color
@@ -1212,7 +1222,7 @@ packages:
       vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.2.11(sass@1.77.0)
+      vite: 5.2.11(sass@1.77.0)(terser@5.31.0)
       vue: 3.4.26
     dev: true
 
@@ -1676,6 +1686,10 @@ packages:
 
   /buffer-fill@1.0.0:
     resolution: {integrity: sha512-T7zexNBwiiaCOGDg9xNX9PBmjrubblRkENuptryuI64URkXDFum9il/JGL8Lm8wYfAXpredVXXZz7eMHilimiQ==}
+    dev: true
+
+  /buffer-from@1.1.2:
+    resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
     dev: true
 
   /buffer@5.7.1:
@@ -4737,6 +4751,13 @@ packages:
     resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
     engines: {node: '>=0.10.0'}
 
+  /source-map-support@0.5.21:
+    resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==}
+    dependencies:
+      buffer-from: 1.1.2
+      source-map: 0.6.1
+    dev: true
+
   /source-map@0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
@@ -5014,6 +5035,17 @@ packages:
     dependencies:
       temp-dir: 1.0.0
       uuid: 3.4.0
+    dev: true
+
+  /terser@5.31.0:
+    resolution: {integrity: sha512-Q1JFAoUKE5IMfI4Z/lkE/E6+SwgzO+x4tq4v1AyBLRj8VSYvRO6A/rQrPg1yud4g0En9EKI1TvFRF2tQFcoUkg==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      '@jridgewell/source-map': 0.3.6
+      acorn: 8.11.3
+      commander: 2.20.3
+      source-map-support: 0.5.21
     dev: true
 
   /text-table@0.2.0:
@@ -5320,7 +5352,7 @@ packages:
     peerDependencies:
       vite: ^2.6.0 || ^3.0.0 || ^4.0.0 || ^5.0.0-0
     dependencies:
-      vite: 5.2.11(sass@1.77.0)
+      vite: 5.2.11(sass@1.77.0)(terser@5.31.0)
     dev: true
 
   /vite-plugin-compression@0.5.1(vite@5.2.11):
@@ -5331,7 +5363,7 @@ packages:
       chalk: 4.1.2
       debug: 4.3.4
       fs-extra: 10.1.0
-      vite: 5.2.11(sass@1.77.0)
+      vite: 5.2.11(sass@1.77.0)(terser@5.31.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5364,7 +5396,7 @@ packages:
       imagemin-webp: 6.1.0
       jpegtran-bin: 6.0.1
       pathe: 0.2.0
-      vite: 5.2.11(sass@1.77.0)
+      vite: 5.2.11(sass@1.77.0)(terser@5.31.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5388,7 +5420,7 @@ packages:
       perfect-debounce: 1.0.0
       picocolors: 1.0.0
       sirv: 2.0.4
-      vite: 5.2.11(sass@1.77.0)
+      vite: 5.2.11(sass@1.77.0)(terser@5.31.0)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -5405,7 +5437,7 @@ packages:
       '@vue/devtools-shared': 7.1.3
       execa: 8.0.1
       sirv: 2.0.4
-      vite: 5.2.11(sass@1.77.0)
+      vite: 5.2.11(sass@1.77.0)(terser@5.31.0)
       vite-plugin-inspect: 0.8.4(vite@5.2.11)
       vite-plugin-vue-inspector: 5.0.1(vite@5.2.11)
     transitivePeerDependencies:
@@ -5429,12 +5461,12 @@ packages:
       '@vue/compiler-dom': 3.4.26
       kolorist: 1.8.0
       magic-string: 0.30.10
-      vite: 5.2.11(sass@1.77.0)
+      vite: 5.2.11(sass@1.77.0)(terser@5.31.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite@5.2.11(sass@1.77.0):
+  /vite@5.2.11(sass@1.77.0)(terser@5.31.0):
     resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -5466,6 +5498,7 @@ packages:
       postcss: 8.4.38
       rollup: 4.17.2
       sass: 1.77.0
+      terser: 5.31.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
