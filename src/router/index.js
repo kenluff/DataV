@@ -120,6 +120,15 @@ const router = createRouter({
             title: '边框',
             description: 'DataV边框'
           }
+        },
+        {
+          path: 'decoration',
+          name: 'Decoration',
+          component: () => import('@/views/datav/DatavDecorationView.vue'),
+          meta: {
+            title: '装饰',
+            description: 'DataV装饰'
+          }
         }
       ]
     }
