@@ -32,8 +32,8 @@ const BorderBox = {
 }
 </script>
 <template>
-  <div class="bg-slate-900 flex flex-row flex-wrap">
-    <div class="w-80 h-80 mx-10 my-10" v-for="(item, index) in BorderBox" :key="index">
+  <div class="bg-slate-900 p-32 flex flex-row flex-wrap justify-between">
+    <div class="w-3/12 h-80 mx-5 my-10" v-for="(item, index) in BorderBox" :key="index">
       <component :is="item">
         <div class="h-80 text-slate-200 flex flex-col justify-center items-center">
           {{ index }}
