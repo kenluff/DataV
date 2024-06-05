@@ -103,6 +103,25 @@ const router = createRouter({
           }
         }
       ]
+    },
+    {
+      path: '/data-v',
+      name: 'DataV',
+      meta: {
+        title: 'DataV组件库',
+        description: 'DataV组件库'
+      },
+      children: [
+        {
+          path: 'border',
+          name: 'Border',
+          component: () => import('@/views/datav/DatavBorderView.vue'),
+          meta: {
+            title: '边框',
+            description: 'DataV边框'
+          }
+        }
+      ]
     }
   ]
 })
